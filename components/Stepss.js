@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-
+/*Routing for the bar*/
 const steps = [
     {step: 1, name: 'Menu', url: '/'},
     {step: 2, name: 'Abstract', url: '/abstract'},
@@ -8,7 +8,7 @@ const steps = [
 
 export default function Stepss() {
 
-
+{/*Routing to top bar*/}
     const router = useRouter();
 
     const ProcessCalculate = () => {        

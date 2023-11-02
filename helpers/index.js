@@ -1,3 +1,4 @@
+//function to format money
 export const formatMoney = quantity => {
     return quantity.toLocaleString('en-US', {
         style: 'currency',

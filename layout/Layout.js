@@ -19,7 +19,7 @@ const customStyles = {
   },
 };
 
-  // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#__next');
 
 export default function Layout({children, page}) {
@@ -27,6 +27,7 @@ export default function Layout({children, page}) {
   const { modal } = useFoodTruck();
 
     return (
+      /*layout to clients*/
       <>
         <Head>
             <title>Foodtruck - {page}</title>

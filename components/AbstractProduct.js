@@ -2,9 +2,12 @@ import Image from "next/image"
 import { formatMoney } from "../helpers"
 import useFoodTruck from "../hooks/useFoodTruck"
 
+//Abstract panel
 export default function AbstractProduct({product}) {
+  // to edit and delete products
   const { handleEditQuantity, handleDeleteQuantity } = useFoodTruck();
   return (
+    // create img
     <div className="shadow p-5 mb-3 flex gap-10 items-center">
         <div className="md:w-1/6">
             <Image
@@ -12,13 +15,16 @@ export default function AbstractProduct({product}) {
                 src={`/assets/img/${product.image}.jpg`}
                 />
         </div>
+        {/*all datas need to description the product*/}
         <div className="md:w-4/6">
             <p className="text-3xl font-bold">{product.name}</p>
             <p className="text-xl font-bold mt-2">Quantity: {product.quantity}</p>
             <p className="text-xl font-bold mt-2 text-amber-500">Price: {formatMoney(product.price)}</p>
             <p className="text-sm text-gray-700 mt-2">Subtotal: {formatMoney(product.price * product.quantity)}</p>
         </div>
+
         <div >
+                  {/*buttons to edit and delete with emoji*/}
             <button type="button" className="bg-sky-700 flex gap-2 px-5 py-2 text-white rounded-md font-bold uppercase shadow-md w-full text-center"
                     onClick={() => handleEditQuantity(product.id)}
             >

@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import useFoodTruck from "../hooks/useFoodTruck";
 import { formatMoney } from "../helpers";
+// to select the quantity of the product in a special window
 
 export default function ModalProduct() {
+
     const { product, handleChangeModal, handleAddOrder, order } = useFoodTruck();
     const [quantity, setQuantity] = useState(1);
     const [edition, setEdition] = useState(false);
@@ -33,8 +35,9 @@ export default function ModalProduct() {
             </div>
             <h1 className="text-3xl font-bold mt-5">{product.name}</h1>
             <p className="mt-5 font-black text-5xl text-amber-500">{formatMoney(product.price)}</p>
+            
             <div className="flex gap-4 mt-5">
-
+                {/*THE BUTTON SUBTRACT*/}
                 <button type="button" onClick={() => {
                     if(quantity <= 1) return;
                     setQuantity(quantity -1)
@@ -45,7 +48,7 @@ export default function ModalProduct() {
                 </button>
 
                 <p className="text-3xl">{quantity}</p>
-
+                {/*THE BUTTON PLUS*/}
                 <button type="button" onClick={() => {
                     if(quantity >= 7) return;
                     setQuantity(quantity +1)
@@ -55,6 +58,7 @@ export default function ModalProduct() {
                     </svg>
                 </button>
             </div>
+            {/*THE BUTTON To submit changes or add to the cart*/}
                 <button 
                     type="button"
                     className="bg-indigo-600 hover:bg-indigo-800 px-5 py-2 mt-5 text-white font-bold uppercase rounded" onClick={() => handleAddOrder({...product, quantity})}
