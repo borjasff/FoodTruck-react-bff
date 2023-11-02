@@ -1,5 +1,5 @@
 import Head from "next/head"
-import Sidebar from "../components/sidebar"
+import Sidebar from "../components/Sidebar"
 import  Modal from "react-modal";
 import { ToastContainer } from "react-toastify";
 import useFoodTruck from "../hooks/useFoodTruck";
